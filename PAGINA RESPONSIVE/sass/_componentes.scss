@@ -1,0 +1,128 @@
+$color-main: #0075FF;
+@mixin btn-base {
+    padding: 0.25rem 1.5rem;
+    border-radius: 0.25rem;
+    border: none;
+    
+}
+@mixin btn-sm-modify {
+    font-size: 0.75rem;
+    padding: 0.1rem 1rem    
+}
+.btn-main{
+    background-color: $color-main ;
+    color: white ;
+    @include btn-base();
+    
+
+    &:hover{
+        background-color: white ;
+        color: $color-main;
+
+    }
+    &-s{
+        @extend .btn-main;
+        @include btn-sm-modify();
+
+    }
+}
+
+.btn-sec{
+    @include btn-base();
+    background-color: transparent;
+    color: #000000;
+    
+    &:hover{
+        color: rgb(132, 128, 128);
+    }
+    &-s{
+            @extend .btn-sec;
+            background-color: transparent;
+            color:#000000;
+            @include btn-sm-modify();
+
+    }
+
+}
+.main-menu{
+    
+    margin-bottom: 0;
+    
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        li{
+            list-style: none;
+            font-size: 0.75rem;
+            a{
+                color: #000000;
+                text-decoration: none;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    
+.icon-sm{
+    
+    i{
+        color: $color-main;
+        
+    padding: 0.1rem 0.25rem;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00000055;
+    }
+
+}
+
+.feature{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .icon{
+        color: $color-main;
+        font-size: 15rem;
+        
+        
+    }
+    .description{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        .title{
+            font-size: 2rem;
+        }
+        .text{
+            color: #888;
+            font-weight: 600;
+        }
+}
+    .cta{
+        margin-top: 3rem;
+        color: $color-main;
+        font-weight: 600;
+
+    }
+}
+.icon-desc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+    text-align: center;
+    margin: auto;
+    .icon{
+        color: $color-main;
+        font-size: 7rem;
+        padding: 0;
+    }
+    .title{
+        margin-top: -2rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+}
